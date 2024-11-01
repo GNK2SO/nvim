@@ -1,0 +1,10 @@
+vim.opt.syntax = "on"
+vim.opt.number = true
+vim.opt.autoindent = true
+vim.opt.cursorline = true
+vim.opt.expandtab = true
+vim.opt.termguicolors = true
+vim.opt.shiftwidth = 2
+vim.opt.encoding = "UTF-8"
+vim.opt.mouse = ""
+vim.opt.wrap = false
