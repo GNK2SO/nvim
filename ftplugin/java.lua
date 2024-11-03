@@ -3,11 +3,6 @@ local jdtls = require("jdtls")
 local home = vim.fn.expand("~")
 local jdtls_path = vim.fn.stdpath("data") .. "/mason/packages/jdtls";
 
-local function organize_and_format()
-  jdtls.organize_imports()
-  jdtls.format()
-end
-
 jdtls.start_or_attach({
   cmd = {
     home .. "/.asdf/installs/java/adoptopenjdk-17.0.9+9/bin/java",
@@ -44,7 +39,6 @@ jdtls.start_or_attach({
     }
   },
   on_attach = function(client, bufnr)
-    local opts = { silent = true, buffer = bufnr }
-    vim.keymap.set("n", "<leader>of", organize_and_format, { desc = "Organize imports and format code", buffer = bufnr })
+    vim.keymap.set("n", "<leader>o", jdtls.organize_imports, { desc = "Organize imports", buffer = bufnr })
   end
 })
