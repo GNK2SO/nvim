@@ -11,7 +11,8 @@ return {
       require("mason-lspconfig").setup({
         ensured_installed = {
           "jdtls",
-          "lua_ls"
+          "lua_ls",
+          "clangd"
         }
       })
 
@@ -32,6 +33,7 @@ return {
     config = function()
       local lspconfig = require("lspconfig")
       lspconfig.jdtls.setup({})
+      lspconfig.clangd.setup({})
     end
   },
   { "mfussenegger/nvim-jdtls" },
