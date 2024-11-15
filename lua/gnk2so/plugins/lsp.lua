@@ -10,6 +10,7 @@ return {
     config = function()
       require("mason-lspconfig").setup({
         ensured_installed = {
+          "typescript-language-server",
           "jdtls",
           "lua_ls",
           "clangd"
@@ -32,6 +33,7 @@ return {
     "neovim/nvim-lspconfig",
     config = function()
       local lspconfig = require("lspconfig")
+      lspconfig.ts_ls.setup({})
       lspconfig.jdtls.setup({})
       lspconfig.clangd.setup({})
     end
