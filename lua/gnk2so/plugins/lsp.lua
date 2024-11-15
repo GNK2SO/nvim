@@ -34,6 +34,7 @@ return {
     config = function()
       local lspconfig = require("lspconfig")
       lspconfig.ts_ls.setup({})
+      lspconfig.lua_ls.setup({})
       lspconfig.jdtls.setup({})
       lspconfig.clangd.setup({})
     end
