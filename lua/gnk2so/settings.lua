@@ -8,3 +8,4 @@ vim.opt.shiftwidth = 2
 vim.opt.encoding = "UTF-8"
 vim.opt.mouse = ""
 vim.opt.wrap = false
+vim.opt.relativenumber = true
