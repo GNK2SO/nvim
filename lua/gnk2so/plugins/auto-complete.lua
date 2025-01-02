@@ -30,7 +30,10 @@ return {
           ["<C-Space>"] = cmp.mapping.complete(),
           ["<C-e>"] = cmp.mapping.close(),
           ["<Tab>"] = cmp.mapping(function(fallback)
-            if cmp.visible() then
+            local col = vim.fn.col('.') - 1
+            if col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then
+              fallback()
+            elseif cmp.visible() then
               cmp.select_next_item()
             elseif luasnip.expand_or_jumpable() then
               luasnip.expand_or_jump()
